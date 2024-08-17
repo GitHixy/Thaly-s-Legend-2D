@@ -3,12 +3,15 @@ import pygame
 class GameView:
     def __init__(self, screen):
         self.screen = screen
+        self.screen_width, self.screen_height = screen.get_size()
+        self.background = pygame.image.load("assets/bg1.webp").convert()
+        self.background = pygame.transform.scale(self.background, (self.screen_width, self.screen_height))
 
     def draw_background(self):
-        self.screen.fill((135, 206, 233))  #SKY COLOR
+        self.screen.blit(self.background, (0, 0))
 
     def draw_player(self, player):
-        pygame.draw.rect(self.screen, player.color, player.rect)
+        self.screen.blit(player.image, player.rect)
 
     def update_display(self):
         pygame.display.flip()            

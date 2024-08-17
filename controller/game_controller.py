@@ -4,7 +4,7 @@ from view.game_view import GameView
 
 class GameController:
     def __init__(self, screen):
-        self.player = Player(x=375, y=540, width=50, height=50, color=(255, 0, 0))
+        self.player = Player(x=100, y=650, width=100, height=100, color=(255, 0, 0))
         self.view = GameView(screen)
         self.clock = pygame.time.Clock()
 
